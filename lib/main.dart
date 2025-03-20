@@ -3,8 +3,28 @@ import 'package:flutter/material.dart';
 void main() {
   // runApp(const MyApp());
   runApp(
-    const MaterialApp(
-      home: Scaffold(body: Center(child: Text('Hello, World!'))),
+    MaterialApp(
+      home: Scaffold(
+        // backgroundColor: Color.fromARGB(255, 46, 17, 97),
+        body: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              // begin: first coordinate of the gradient
+              begin: Alignment.topCenter,
+              // end: second coordinate of the gradient
+              end: Alignment.bottomCenter,
+              colors: [Color(0xFF6A1B9A), Color(0xFF4527A0)],
+            ),
+          ),
+          child: const Center(
+            child: Text(
+              'Hello, World!',
+              // style: Configure the text style
+              style: TextStyle(color: Colors.white, fontSize: 28),
+            ),
+          ),
+        ),
+      ),
     ),
   );
 }
