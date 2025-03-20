@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 
 void main() {
   // runApp(const MyApp());
-  runApp(MaterialApp());
+  runApp(
+    const MaterialApp(
+      home: Scaffold(body: Center(child: Text('Hello, World!'))),
+    ),
+  );
 }
 
 // class MyApp extends StatelessWidget {
