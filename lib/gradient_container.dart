@@ -6,6 +6,7 @@ import 'package:first_app/style_text.dart';
 
 var startAlignment = Alignment.topCenter;
 var endAlignment = Alignment.bottomCenter;
+var gradientColors = [Color(0xFF6A1B9A), Color(0xFF4527A0)];
 
 // StatelessWidget is a widget that need when you define your own widget
 class GradientContainer extends StatelessWidget {
@@ -23,7 +24,7 @@ class GradientContainer extends StatelessWidget {
           begin: startAlignment,
           // end: second coordinate of the gradient
           end: endAlignment,
-          colors: [Color(0xFF6A1B9A), Color(0xFF4527A0)],
+          colors: gradientColors,
         ),
       ),
       child: const Center(child: StyleText()),
