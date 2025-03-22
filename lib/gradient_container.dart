@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:first_app/style_text.dart';
+//import 'package:first_app/style_text.dart';
 
 // final or const startAlignment = Alignment.topCenter;
 // final or const endAlignment = Alignment.bottomCenter;
 
 var startAlignment = Alignment.topCenter;
 var endAlignment = Alignment.bottomCenter;
-var gradientColors = [Color(0xFF6A1B9A), Color(0xFF4527A0)];
+//var gradientColors = ;
 
 // StatelessWidget is a widget that need when you define your own widget
 class GradientContainer extends StatelessWidget {
@@ -14,7 +14,16 @@ class GradientContainer extends StatelessWidget {
   // First solution
   //GradientContainer({Key? key}) : super(key: key);
   // Second solution
-  const GradientContainer({super.key});
+  GradientContainer(this.firstColor, this.secondColor, {super.key});
+
+  final Color firstColor;
+  final Color secondColor;
+  var activeDiceImage = 'assets/images/dice-2.png';
+
+  void rollDice() {
+    activeDiceImage = 'assets/images/dice-1.png';
+  }
+
   @override
   Widget build(context) {
     return Container(
@@ -24,10 +33,28 @@ class GradientContainer extends StatelessWidget {
           begin: startAlignment,
           // end: second coordinate of the gradient
           end: endAlignment,
-          colors: gradientColors,
+          colors: [firstColor, secondColor],
         ),
       ),
-      child: const Center(child: StyleText()),
+      child: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Image.asset(activeDiceImage, width: 200, height: 200),
+            const SizedBox(height: 20),
+            TextButton(
+              onPressed: rollDice,
+              style: TextButton.styleFrom(
+                // padding: EdgeInsets.only(top: 20),
+                foregroundColor: Colors.white,
+                textStyle: TextStyle(fontSize: 28),
+              ),
+              child: Text("Roll Dice"),
+            ),
+          ],
+        ),
+      ),
+      // StyleText("Hello Zeref")),
     );
   }
 }
