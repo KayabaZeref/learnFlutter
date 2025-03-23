@@ -9,6 +9,7 @@ var endAlignment = Alignment.bottomCenter;
 //var gradientColors = ;
 
 // StatelessWidget is a widget that need when you define your own widget
+// ignore: must_be_immutable
 class GradientContainer extends StatelessWidget {
   // super(key: key). First key call from StatelessWidget(super). Second key call from Container
   // First solution
@@ -49,7 +50,7 @@ class GradientContainer extends StatelessWidget {
                 foregroundColor: Colors.white,
                 textStyle: TextStyle(fontSize: 28),
               ),
-              child: Text("Roll Dice"),
+              child: Text("Roll The Dice"),
             ),
           ],
         ),
