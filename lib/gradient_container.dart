@@ -19,10 +19,10 @@ class GradientContainer extends StatelessWidget {
 
   final Color firstColor;
   final Color secondColor;
-  var activeDiceImage = 'assets/images/dice-2.png';
+  var activeDiceImage = 'assets/images/dice-3.png';
 
   void rollDice() {
-    activeDiceImage = 'assets/images/dice-4.png';
+    activeDiceImage = 'assets/images/dice-1.png';
   }
 
   @override
