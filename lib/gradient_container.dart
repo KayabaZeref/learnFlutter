@@ -22,7 +22,7 @@ class GradientContainer extends StatelessWidget {
   var activeDiceImage = 'assets/images/dice-2.png';
 
   void rollDice() {
-    activeDiceImage = 'assets/images/dice-4.png';
+    activeDiceImage = 'assets/images/dice-3.png';
   }
 
   @override
