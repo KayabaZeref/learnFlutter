@@ -1,61 +1,64 @@
 import 'package:flutter/material.dart';
-//import 'package:first_app/style_text.dart';
+// import 'package:first_app/style_text.dart';
 
-// final or const startAlignment = Alignment.topCenter;
-// final or const endAlignment = Alignment.bottomCenter;
+var startAlignment = Alignment.topLeft;
+var endAlignment = Alignment.bottomRight;
 
-var startAlignment = Alignment.topCenter;
-var endAlignment = Alignment.bottomCenter;
-//var gradientColors = ;
+// var gradienColorsOne = Colors.blue;
+// var gradienColorsTwo = Colors.purple;
 
-// StatelessWidget is a widget that need when you define your own widget
-// ignore: must_be_immutable
+// Use GradientContainer to create a gradient background
 class GradientContainer extends StatelessWidget {
-  // super(key: key). First key call from StatelessWidget(super). Second key call from Container
-  // First solution
-  //GradientContainer({Key? key}) : super(key: key);
-  // Second solution
-  GradientContainer(this.firstColor, this.secondColor, {super.key});
-
-  final Color firstColor;
-  final Color secondColor;
-  var activeDiceImage = 'assets/images/dice-1.png';
-
-  void rollDice() {
-    activeDiceImage = 'assets/images/dice-1.png';
-  }
+  // Use constructor to initialize the widget
+  // Use super.key to pass the key to the parent class
+  GradientContainer(this.gradienColorsOne, this.gradienColorsTwo, {super.key});
+  // Use StatelessWidget to create a widget that does not require state management
+  final Color gradienColorsOne;
+  final Color gradienColorsTwo;
+  var activeDiceImage = 'dice-2.png';
 
   @override
   Widget build(context) {
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          // begin: first coordinate of the gradient
+          colors: [gradienColorsOne, gradienColorsTwo],
           begin: startAlignment,
-          // end: second coordinate of the gradient
           end: endAlignment,
-          colors: [firstColor, secondColor],
         ),
       ),
+      // child: Center(child: StyleText("Hello, World!")),
       child: Center(
         child: Column(
+          // Use Column to create a vertical layout
+          // Use mainAxisSize.min to center the children
           mainAxisSize: MainAxisSize.min,
           children: [
-            Image.asset(activeDiceImage, width: 150, height: 150),
+            Image.asset('assets/images/$activeDiceImage', width: 200),
+            // use SizedBox to create space between the image and the button
             const SizedBox(height: 20),
             TextButton(
               onPressed: rollDice,
               style: TextButton.styleFrom(
-                // padding: EdgeInsets.only(top: 20),
+                // // padding: Use EdgeInsets to create padding on top
+                // padding: const EdgeInsets.only(top: 20),
+                backgroundColor: Colors.black,
                 foregroundColor: Colors.white,
-                textStyle: TextStyle(fontSize: 28),
+                textStyle: const TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-              child: Text("Roll The Dice"),
+              child: Text('Roll Dice'),
             ),
           ],
         ),
       ),
-      // StyleText("Hello Zeref")),
     );
+  }
+
+  // Use rollDice to create a function that will be called when the button is pressed
+  void rollDice() {
+    activeDiceImage = "dice-3.png";
   }
 }
