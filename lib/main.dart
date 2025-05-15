@@ -7,7 +7,7 @@ void main() {
       home: Scaffold(
         // Use Container can create gradient background
         // Use BoxDecoration to create gradient background
-        body: GradientContainer(Colors.blue, Colors.purple),
+        body: GradientContainer(Color(0xFF614385), Color(0xFF516395)),
       ),
     ),
   );

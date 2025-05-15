@@ -15,11 +15,6 @@ class RollerDice extends StatefulWidget {
   }
 }
 
-@override
-State<RollerDice> createState() {
-  return _RollerDiceState();
-}
-
 // Use StatefulWidget to create a widget that requires state management
 //underscore means private
 class _RollerDiceState extends State<RollerDice> {
